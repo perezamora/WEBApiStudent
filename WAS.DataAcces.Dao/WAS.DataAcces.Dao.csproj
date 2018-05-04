@@ -62,11 +62,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\WasDaoException.cs" />
+    <Compile Include="ICreateDao.cs" />
+    <Compile Include="IDeleteDao.cs" />
+    <Compile Include="IReadDao.cs" />
+    <Compile Include="IStudentRepository.cs" />
+    <Compile Include="IUpdateDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Autofac\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WAS.Common.Logic\WAS.Common.Logic.csproj">
+      <Project>{327f1f23-bc5f-481c-b1dc-acf931f3c750}</Project>
+      <Name>WAS.Common.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

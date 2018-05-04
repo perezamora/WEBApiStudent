@@ -115,6 +115,16 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WAS.Business.Logic\WAS.Business.Logic.csproj">
+      <Project>{fffc69b6-de87-4ca2-98cf-3963707b60bd}</Project>
+      <Name>WAS.Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WAS.Common.Logic\WAS.Common.Logic.csproj">
+      <Project>{327f1f23-bc5f-481c-b1dc-acf931f3c750}</Project>
+      <Name>WAS.Common.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
