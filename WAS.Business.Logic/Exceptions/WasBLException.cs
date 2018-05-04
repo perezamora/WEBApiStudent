@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WAS.Business.Logic.Exceptions
 {
     [Serializable()]
-    class WasBLException : System.Exception
+    public class WasBLException : System.Exception
     {
         public WasBLException() : 
             base() { }
