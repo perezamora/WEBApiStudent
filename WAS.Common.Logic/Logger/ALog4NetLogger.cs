@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,9 @@ namespace WAS.Common.Logic.Logger
     {
         private readonly ILog _log;
 
-        public ALog4NetLogger(Type typeDeclaring)
+        public ALog4NetLogger()
         {
-            this._log = LogManager.GetLogger(typeDeclaring);
+            this._log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }
 
         public void Debug(object message)

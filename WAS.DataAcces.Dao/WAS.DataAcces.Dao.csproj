@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autofac\DataAccesIocModule.cs" />
     <Compile Include="Exceptions\WasDaoException.cs" />
     <Compile Include="ICreateDao.cs" />
     <Compile Include="IDeleteDao.cs" />
@@ -76,7 +77,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Autofac\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
