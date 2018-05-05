@@ -112,8 +112,6 @@ namespace WAS.DataAcces.Dao
             var student = item as Student;
             try
             {
-               
-
                 using (var context = new StudentContext())
                 {
                     studentUpdate = context.Students

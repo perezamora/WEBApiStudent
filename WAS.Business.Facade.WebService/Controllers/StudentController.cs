@@ -23,12 +23,12 @@ namespace WAS.Business.Facade.WebService.Controllers
         }
 
         [HttpGet()]
-        public IHttpActionResult Read(int idStudent)
+        public IHttpActionResult Read(int id)
         {
             _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                var student = _studentService.GetById(idStudent);
+                var student = _studentService.GetById(id);
                 return Ok(student);
             }
             catch (WasBLException e)
@@ -70,11 +70,11 @@ namespace WAS.Business.Facade.WebService.Controllers
         }
 
         [HttpDelete()]
-        public IHttpActionResult Delete(int idStudent)
+        public IHttpActionResult Delete(int id)
         {
             try
             {
-                var result = _studentService.DeleteById(idStudent);
+                var result = _studentService.DeleteById(id);
                 return Ok(result);
             }
             catch (WasBLException e)
