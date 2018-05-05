@@ -23,27 +23,31 @@ namespace WAS.Business.Logic
 
         public Student Add(Student student)
         {
-            throw new NotImplementedException();
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + student.ToString());
+            return _studentRepository.Insert(student);
         }
 
         public int DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + id);
+            return _studentRepository.Delete(id);
         }
 
         public List<Student> GetAll()
         {
-            throw new NotImplementedException();
+            return _studentRepository.GetAll();
         }
 
         public Student GetById(int id)
         {
-            throw new NotImplementedException();
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + id);
+            return _studentRepository.SelectById(id);
         }
 
         public Student Update(int id, Student student)
         {
-            throw new NotImplementedException();
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + student.ToString());
+            return _studentRepository.Update(id, student);
         }
     }
 }
