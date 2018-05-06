@@ -49,6 +49,7 @@ namespace WAS.Business.Logic
         public Student Update(int id, Student student)
         {
             _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + student.ToString());
+            student.Edad = this.CalcularEdat(student.FechaNacimiento);
             return _studentRepository.Update(id, student);
         }
 
