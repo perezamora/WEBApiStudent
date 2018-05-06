@@ -24,6 +24,8 @@ namespace WAS.Business.Logic
         public Student Add(Student student)
         {
             _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + student.ToString());
+            student.Edad = this.CalcularEdat(student.FechaNacimiento);
+            student.FechaCreacion = this.CalcularDateCreate();
             return _studentRepository.Insert(student);
         }
 
@@ -48,6 +50,23 @@ namespace WAS.Business.Logic
         {
             _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + student.ToString());
             return _studentRepository.Update(id, student);
+        }
+
+
+        public int CalcularEdat(DateTime fechaNacimiento)
+        {
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DateTime CurrentDate = DateTime.Now;
+            var edad = CurrentDate.Year - fechaNacimiento.Year;
+            if (CurrentDate.Month < fechaNacimiento.Month || (CurrentDate.Month == fechaNacimiento.Month && CurrentDate.Day < fechaNacimiento.Day))
+                edad--;
+            return edad;
+        }
+
+        private DateTime CalcularDateCreate()
+        {
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return DateTime.Now;
         }
     }
 }

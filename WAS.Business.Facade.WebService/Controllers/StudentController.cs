@@ -57,6 +57,7 @@ namespace WAS.Business.Facade.WebService.Controllers
         [HttpPost()]
         public IHttpActionResult Add(Student student)
         {
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 var studentAdd = _studentService.Add(student);
@@ -72,6 +73,7 @@ namespace WAS.Business.Facade.WebService.Controllers
         [HttpDelete()]
         public IHttpActionResult Delete(int id)
         {
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 var result = _studentService.DeleteById(id);
@@ -87,9 +89,10 @@ namespace WAS.Business.Facade.WebService.Controllers
         [HttpPut()]
         public IHttpActionResult Update(int id, Student student)
         {
+            _log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + ":" + id);
             try
             {
-                var studentUpdate = _studentService.Update(student.Id, student);
+                var studentUpdate = _studentService.Update(id, student);
                 return Ok(studentUpdate);
             }
             catch (WasBLException e)
