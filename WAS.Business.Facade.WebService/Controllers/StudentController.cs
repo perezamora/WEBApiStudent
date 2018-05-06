@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WAS.Business.Logic;
 using WAS.Business.Logic.Exceptions;
 using WAS.Common.Logic.Logger;
@@ -11,6 +12,7 @@ using WAS.Common.Logic.Model;
 
 namespace WAS.Business.Facade.WebService.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class StudentController : ApiController
     {
         private readonly ILogger _log;
